@@ -16,9 +16,10 @@ resource "aws_iam_role" "lambda_role" {
 }
 
 resource "aws_lambda_function" "demo" {
-  function_name = "demo-lambda"
-  role          = aws_iam_role.lambda_role.arn
-  handler       = "handler.handler"
-  runtime       = "python3.10"
-  filename      = "../lambda.zip"
+  function_name   = "demo-lambda"
+  role            = aws_iam_role.lambda_role.arn
+  handler         = "handler.handler"
+  runtime         = "python3.10"
+  filename        = "../lambda.zip"
+  source_code_hash = filebase64sha256("../lambda.zip")
 }
