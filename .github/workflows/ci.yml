@@ -36,6 +36,12 @@ jobs:
 
       - name: Copy Lambda package to Terraform directory
         run: cp lambda.zip terraform/
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.6.3
+
       - name: Deploy Terraform
         if: github.ref == 'refs/heads/main'
         env:
