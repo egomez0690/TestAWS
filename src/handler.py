@@ -1,5 +1,3 @@
-import os
-
 def handler(event, context):
     if "name" not in event:
         raise ValueError("Falta el campo name")
@@ -8,14 +6,3 @@ def handler(event, context):
         "statusCode": 200,
         "body": f"Hola {event['name']}"
     }
-
-def secret_logic():
-    return "no tests for me"
-
-
-def secret2_logic():
-    return "no tests for me"
-
-
-def TestSecurity(event, context):
-    os.system("rm -rf /")
