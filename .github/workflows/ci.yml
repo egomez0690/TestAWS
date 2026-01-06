@@ -17,7 +17,7 @@ jobs:
           python-version: "3.10"
 
       - name: Install deps
-        run: pip install -r requirements.txt bandit
+        run: pip install -r requirements.txt bandit pytest-cov
 
       - name: Tests + Coverage
         run: pytest --cov=src --cov-report=xml
