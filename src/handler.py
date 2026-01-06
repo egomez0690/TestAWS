@@ -9,3 +9,7 @@ def handler(event, context):
 
 def secret_logic():
     return "no tests for me"
+
+
+def secret2_logic():
+    return "no tests for me"
